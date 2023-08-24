@@ -8,6 +8,9 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ButtonModule} from "primeng/button";
 import {HeaderComponent} from './header/header.component';
 import {InputTextModule} from 'primeng/inputtext';
+import {HttpClientModule} from "@angular/common/http";
+import {FormsModule} from "@angular/forms";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -22,6 +25,9 @@ import {InputTextModule} from 'primeng/inputtext';
     BrowserAnimationsModule,
     ButtonModule,
     InputTextModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

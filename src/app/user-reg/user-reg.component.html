@@ -1,20 +1,21 @@
-<div class="user-register" ng-controller="RegisterController">
+<div class="user-register">
   <h1>REGISTER</h1>
-  <form  ng-submit="registerUser()">
+  <form [formGroup]="myForm" (ngSubmit)="registerUser()">
     <div class="username">
       <label for="username">Username</label>
       <br>
-      <input type="text" ng-model="user.username" pInputText formControlName="text" id="username"/>
+      <input type="text" formControlName="username" id="username"/>
     </div>
 
     <div class="password">
       <label for="password">Password</label>
       <br>
-      <input type="password" ng-model="user.password" pInputText formControlName="text"  id="password"/>
+      <input type="password" formControlName="password" id="password"/>
     </div>
 
     <div class="submit-button">
-      <p-button label="Submit"></p-button>
+      <button type="submit">Submit</button>
     </div>
   </form>
 </div>
+

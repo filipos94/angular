@@ -2,3 +2,25 @@ p {
   position: relative;
   color: black;
 }
+
+h1 {
+  color: black;
+}
+
+.user-register {
+  text-align: center;
+  padding-top: 1%;
+  color: black;
+  input {
+    padding: 0.4%;
+  }
+  .username {
+    margin: 0.3%;
+  }
+  .password {
+    margin: 0.3%;
+  }
+  .submit-button {
+    margin: 1%;
+  }
+}

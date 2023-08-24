@@ -1,1 +1,20 @@
-<p>user-login works!</p>
+<div class="user-register">
+  <h1>LOGIN</h1>
+  <form [formGroup]="myGroup" (ngSubmit)="userLogin()">
+    <div class="username">
+      <label for="username">Username</label>
+      <br>
+      <input type="text" formControlName="username" id="username"/>
+    </div>
+
+    <div class="password">
+      <label for="password">Password</label>
+      <br>
+      <input type="password" formControlName="password"  id="password"/>
+    </div>
+
+    <div class="submit-button">
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+</div>
