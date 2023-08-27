@@ -21,6 +21,8 @@ export class UserRegComponent implements OnInit{
   }
 
   registerUser(){
+    if (!this.myForm.valid) return
+
     const userData = {
       username: this.myForm.value.username,
       password: this.myForm.value.password

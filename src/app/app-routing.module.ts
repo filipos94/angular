@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {UserLoginComponent} from "./user-login/user-login.component";
 import {UserRegComponent} from "./user-reg/user-reg.component";
+import {AppComponent} from "./app.component";
 
 
 const routes: Routes = [
@@ -12,7 +13,7 @@ const routes: Routes = [
   {
     component:UserRegComponent,
     path:'user-register'
-  }
+  },
 ];
 
 @NgModule({
