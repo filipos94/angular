@@ -1,0 +1,15 @@
+<div class="surface-card p-4 shadow-2 border-round container-middleOfTheScreen" style="position: relative; height: 700px; width: 45%;">
+  <div class="text-center mb-5">
+    <h1>Chatroom</h1>
+    <div class="text-left p-4" style="border-style:solid; border-color: black; border-width: thin; height:500px;">
+      <p *ngFor="let x of messages">{{x.message}}</p>
+    </div>
+  </div>
+  <div style="position: absolute; bottom: 0; width: 90%; text-align: center;" class="p-4">
+    <form [formGroup]="formGroup" (ngSubmit)="newMessage()">
+      <input formControlName="message" id="message" type="text" placeholder="Message" pInputText style="width: 74%;">
+      <button pButton pRipple label="Send" icon="pi pi-user" class="ml-2" style="width: 24%; text-align: center;"></button>
+    </form>
+  </div>
+
+</div>

@@ -1,21 +1,22 @@
-<div class="user-register">
-  <h1>REGISTER</h1>
-  <form [formGroup]="myForm" (ngSubmit)="registerUser()">
-    <div class="username">
-      <label for="username">Username</label>
-      <br>
-      <input type="text" formControlName="username" id="username"/>
+  <div class="surface-card p-4 shadow-2 border-round container-middleOfTheScreen">
+    <div class="text-center mb-5">
+      <div class="text-900 text-3xl font-medium mb-3">Welcome</div>
+      <span class="text-600 font-medium line-height-3">Already user?</span>
+      <a class="font-medium no-underline ml-2 text-blue-500 cursor-pointer" routerLink="/user-login">Login here!</a>
     </div>
 
-    <div class="password">
-      <label for="password">Password</label>
-      <br>
-      <input type="password" formControlName="password" id="password"/>
-    </div>
+    <div>
+      <form [formGroup]="myForm" (ngSubmit)="registerUser()">
+        <label for="username" class="block text-900 font-medium mb-2">Username</label>
+        <input formControlName="username" id="username" type="text" placeholder="Username" pInputText class="w-full mb-3">
 
-    <div class="submit-button">
-      <button type="submit">Submit</button>
-    </div>
-  </form>
-</div>
+        <label for="password1" class="block text-900 font-medium mb-2">Password</label>
+        <input formControlName="password" id="password1" type="password" placeholder="Password" pInputText class="w-full mb-3">
 
+        <label for="email" class="block text-900 font-medium mb-2">Email address</label>
+        <input formControlName="email" id="email" type="text" placeholder="Email address" pInputText class="w-full mb-3">
+
+        <button pButton pRipple label="Sign Up" icon="pi pi-user" class="w-full mt-5"></button>
+      </form>
+    </div>
+  </div>

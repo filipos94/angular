@@ -9,23 +9,23 @@ import {Router} from "@angular/router";
   styleUrls: ['./user-login.component.scss']
 })
 export class UserLoginComponent implements OnInit {
-  myGroup!: FormGroup;
+  formGroup!: FormGroup;
 
   constructor(private userLoginService: UserLoginService, private formBuilder: FormBuilder, private _router: Router) {}
 
   ngOnInit(){
-    this.myGroup = this.formBuilder.group({
+    this.formGroup = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
     })
   }
 
   userLogin(){
-    if (!this.myGroup.valid) return
+    if (!this.formGroup.valid) return
 
     const userData = {
-      username: this.myGroup.value.username,
-      password: this.myGroup.value.password
+      username: this.formGroup.value.username,
+      password: this.formGroup.value.password
     }
 
     this.userLoginService.loginUser(userData)

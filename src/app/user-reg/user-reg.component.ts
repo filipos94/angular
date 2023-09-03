@@ -16,7 +16,8 @@ export class UserRegComponent implements OnInit{
   ngOnInit() {
     this.myForm = this.formBuilder.group({
       username: ['', Validators.required],
-      password: ['', Validators.required]
+      password: ['', Validators.required],
+      email: ['', Validators.required]
     })
   }
 
@@ -25,7 +26,8 @@ export class UserRegComponent implements OnInit{
 
     const userData = {
       username: this.myForm.value.username,
-      password: this.myForm.value.password
+      password: this.myForm.value.password,
+      email: this.myForm.value.email
     }
 
     this.apiService.registerUser(userData)
@@ -33,9 +35,6 @@ export class UserRegComponent implements OnInit{
         response => {
           console.log('Registration successful!', response);
         },
-        error => {
-          console.error('Registration error', error);
-        }
       )
   }
 }
