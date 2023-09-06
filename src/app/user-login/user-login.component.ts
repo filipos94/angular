@@ -33,7 +33,7 @@ export class UserLoginComponent implements OnInit {
       response => {
         if (!response) console.error('error')
         else {
-          this._router.navigate([''])
+          this._router.navigate(['chatroom'])
         }
       }
     )

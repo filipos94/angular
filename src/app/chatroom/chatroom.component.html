@@ -1,8 +1,10 @@
-<div class="surface-card p-4 shadow-2 border-round container-middleOfTheScreen" style="position: relative; height: 700px; width: 45%;">
-  <div class="text-center mb-5">
-    <h1>Chatroom</h1>
-    <div class="text-left p-4" style="border-style:solid; border-color: black; border-width: thin; height:500px;">
-      <p *ngFor="let x of messages">{{x.message}}</p>
+<div class="surface-card p-4 shadow-2 border-round container-middleOfTheScreen" style="position: relative; height: 600px; width: 45%;">
+  <div class="text-center mb-5 mt-0">
+    <h1 class="mt-0 pt-0" style="color:black">Chatroom</h1>
+    <div #scrollMe [scrollTop]="scrollMe.scrollHeight" class="text-left p-4 overflow-auto" style="border-style:solid; color:black; border-color: black; border-width: thin; height:400px;">
+      <ul *ngFor="let x of messages">
+        {{x.message}}
+      </ul>
     </div>
   </div>
   <div style="position: absolute; bottom: 0; width: 90%; text-align: center;" class="p-4">

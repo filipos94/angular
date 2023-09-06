@@ -40,6 +40,7 @@ export class ChatroomComponent implements OnInit {
         if (!response) console.error("error")
         else {
           console.log("Message Submited", response)
+          this.allMessages();
         }
       }
     )
