@@ -20,6 +20,7 @@ import {PanelModule} from 'primeng/panel';
 import {StyleClassModule} from 'primeng/styleclass';
 import {TableModule} from "primeng/table";
 import {ListboxModule} from "primeng/listbox";
+import {CookieService} from 'ngx-cookie-service'
 
 @NgModule({
   declarations: [
@@ -45,9 +46,9 @@ import {ListboxModule} from "primeng/listbox";
     PanelModule,
     StyleClassModule,
     TableModule,
-    ListboxModule
+    ListboxModule,
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

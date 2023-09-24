@@ -9,7 +9,7 @@
   </div>
   <div style="position: absolute; bottom: 0; width: 90%; text-align: center;" class="p-4">
     <form [formGroup]="formGroup" (ngSubmit)="newMessage()">
-      <input formControlName="message" id="message" type="text" placeholder="Message" pInputText style="width: 74%;">
+      <input formControlName="message" id="message" type="text" placeholder="Message" pInputText style="width: 74%;" [(ngModel)]="message">
       <button pButton pRipple label="Send" icon="pi pi-user" class="ml-2" style="width: 24%; text-align: center;"></button>
     </form>
   </div>

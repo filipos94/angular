@@ -10,6 +10,7 @@ import {Form, FormBuilder, FormGroup, Validators} from "@angular/forms";
 export class ChatroomComponent implements OnInit {
   formGroup!: FormGroup;
   messages: any;
+  message: string = '';
 
   constructor(private readonly chatroomService: ChatroomService, private formBuilder: FormBuilder) {}
 
@@ -28,6 +29,10 @@ export class ChatroomComponent implements OnInit {
     )
   }
 
+  clearInput(){
+    this.message = '';
+  }
+
   newMessage(){
     if (!this.formGroup.valid) return
 
@@ -41,6 +46,7 @@ export class ChatroomComponent implements OnInit {
         else {
           console.log("Message Submited", response)
           this.allMessages();
+          this.clearInput();
         }
       }
     )

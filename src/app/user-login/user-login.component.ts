@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {UserLoginService} from "./user-login.service";
 import {Router} from "@angular/router";
+import {CookieService} from "ngx-cookie-service";
 
 @Component({
   selector: 'app-user-login',
@@ -11,7 +12,11 @@ import {Router} from "@angular/router";
 export class UserLoginComponent implements OnInit {
   formGroup!: FormGroup;
 
-  constructor(private userLoginService: UserLoginService, private formBuilder: FormBuilder, private _router: Router) {}
+  constructor(
+    private userLoginService: UserLoginService,
+    private formBuilder: FormBuilder,
+    private _router: Router,
+    private cookieService: CookieService) {}
 
   ngOnInit(){
     this.formGroup = this.formBuilder.group({
@@ -34,6 +39,8 @@ export class UserLoginComponent implements OnInit {
         if (!response) console.error('error')
         else {
           this._router.navigate(['chatroom'])
+          this.cookieService.set('Test', 'Hello World')
+
         }
       }
     )

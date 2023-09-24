@@ -1,10 +1,11 @@
 .twoButtonsDiv {
-  background-color: rgba(171, 158, 11, 0.8);
-  color: rgba(171, 158, 11, 0.8);
+  background-color: black;
+  color: black;
   width: 100%;
   height: fit-content;
-  text-align: center;
+  text-align: right;
+  padding-right: 3%;
   .twoButtons {
-    margin: 0.5%;
+    margin: 0.7%;
   }
 }
