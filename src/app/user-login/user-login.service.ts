@@ -9,6 +9,6 @@ export class UserLoginService {
   constructor(private httpClient: HttpClient) {}
 
   loginUser(userData:any){
-    return this.httpClient.post('http://localhost:3000/user/userValidation', userData);
+    return this.httpClient.post('http://localhost:3000/user/userLogin', userData, {withCredentials: true});
   }
 }

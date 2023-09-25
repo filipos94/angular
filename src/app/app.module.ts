@@ -20,7 +20,9 @@ import {PanelModule} from 'primeng/panel';
 import {StyleClassModule} from 'primeng/styleclass';
 import {TableModule} from "primeng/table";
 import {ListboxModule} from "primeng/listbox";
-import {CookieService} from 'ngx-cookie-service'
+import {CookieService} from 'ngx-cookie-service';
+import {LogoutComponent} from './logout/logout.component';
+import {AppService} from "./app.service";
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import {CookieService} from 'ngx-cookie-service'
     UserRegComponent,
     UserLoginComponent,
     HeaderComponent,
-    ChatroomComponent
+    ChatroomComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,7 @@ import {CookieService} from 'ngx-cookie-service'
     TableModule,
     ListboxModule,
   ],
-  providers: [CookieService],
+  providers: [CookieService, AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

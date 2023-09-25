@@ -4,6 +4,7 @@ import {UserLoginComponent} from "./user-login/user-login.component";
 import {UserRegComponent} from "./user-reg/user-reg.component";
 import {AppComponent} from "./app.component";
 import {ChatroomComponent} from "./chatroom/chatroom.component";
+import {LogoutComponent} from "./logout/logout.component";
 
 
 const routes: Routes = [
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     component:ChatroomComponent,
     path:'chatroom'
+  },
+  {
+    component:LogoutComponent,
+    path:'logout'
   }
 ];
 

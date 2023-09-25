@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ApiService} from "./user-reg.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-user-reg',
@@ -11,7 +12,7 @@ export class UserRegComponent implements OnInit{
 
   myForm: FormGroup = new FormGroup({});
 
-  constructor(private apiService: ApiService, private formBuilder: FormBuilder) {}
+  constructor(private apiService: ApiService, private formBuilder: FormBuilder, private router: Router) {}
 
   ngOnInit() {
     this.myForm = this.formBuilder.group({
@@ -34,6 +35,7 @@ export class UserRegComponent implements OnInit{
       .subscribe(
         response => {
           console.log('Registration successful!', response);
+          this.router.navigate(['chatroom'])
         },
       )
   }
