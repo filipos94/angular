@@ -1,9 +1,20 @@
 <div class="surface-card p-4 shadow-2 border-round container-middleOfTheScreen" style="position: relative; height: 600px; width: 45%;">
+  <div>
+    <select name="chatrooms" id="charooms">
+      <optgroup label="Chatrooms">
+        <option value="chatroom1">Chatroom1</option>
+        <option value="chatroom2">Chatroom2</option>
+      </optgroup>
+    </select>
+  </div>
   <div class="text-center mb-5 mt-0">
     <h1 class="mt-0 pt-0" style="color:black">Chatroom</h1>
     <div #scrollMe [scrollTop]="scrollMe.scrollHeight" class="text-left p-4 overflow-auto" style="border-style:solid; color:black; border-color: black; border-width: thin; height:400px;">
-      <ul *ngFor="let x of messages">
-        {{x.message}}
+      <ul *ngFor="let x of messages" style="margin: 0">
+        <label for="msg">User: {{x.userID}}</label>
+        <br>
+        <p id="msg" style="text-align: left; display:inline-block; width: 48%;">Message: {{x.message}}</p>
+        <p style="text-align: right; display: inline-block; width: 49%;">Time: {{x.date}}</p>
       </ul>
     </div>
   </div>
@@ -13,5 +24,4 @@
       <button pButton pRipple label="Send" icon="pi pi-user" class="ml-2" style="width: 24%; text-align: center;"></button>
     </form>
   </div>
-
 </div>

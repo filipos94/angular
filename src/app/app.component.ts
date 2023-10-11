@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {AppService} from "./app.service";
+import {Store} from "@ngrx/store";
+import {ActivatedRoute} from "@angular/router";
+
 
 @Component({
   selector: 'app-root',
@@ -8,7 +11,15 @@ import {AppService} from "./app.service";
 })
 export class AppComponent{
   title = 'angularjs';
-  constructor(private service: AppService) {
-    this.service.auth()
-    }
+  constructor(private service: AppService, private store: Store, private route: ActivatedRoute) {
+  }
+  isHomeRoute() {
+    console.log("Home")
+    return this.route.snapshot.routeConfig?.path === '';
+  }
+
+  isAnotherRoute() {
+    console.log("Not home")
+    return this.route.snapshot.routeConfig?.path != '';
+  }
 }

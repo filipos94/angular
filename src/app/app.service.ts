@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {usernameInterface} from "./header/state-header/header-page.interface";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -10,13 +12,6 @@ export class AppService {
   }
 
   auth(){
-    return this.http.get('http://localhost:3000/user/userValidation', {withCredentials: true}).subscribe(
-      (res: any) => {
-        this.user = res.username;
-        console.log(this.user)
-      }, err => {
-        console.log(err)
-    }
-    )
+    return this.http.get<usernameInterface>('http://localhost:3000/user/userValidation', {withCredentials: true})
   }
 }

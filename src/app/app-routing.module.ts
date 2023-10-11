@@ -5,12 +5,13 @@ import {UserRegComponent} from "./user-reg/user-reg.component";
 import {AppComponent} from "./app.component";
 import {ChatroomComponent} from "./chatroom/chatroom.component";
 import {LogoutComponent} from "./logout/logout.component";
+import {HomeComponent} from "./home/home.component";
 
 
 const routes: Routes = [
   {
-    component:AppComponent,
-    path:''
+    component:HomeComponent,
+    path:'home'
   },
   {
     component:UserLoginComponent,

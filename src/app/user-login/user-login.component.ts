@@ -27,6 +27,12 @@ export class UserLoginComponent implements OnInit {
   }
 
   userLogin(){
+    /*
+    Using an action for login
+    dispatch.store(login({username: string, password: string}));
+     */
+
+
     if (!this.formGroup.valid) return
 
     const userData = {

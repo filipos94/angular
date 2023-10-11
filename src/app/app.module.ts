@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {NgModule, isDevMode} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -23,6 +23,15 @@ import {ListboxModule} from "primeng/listbox";
 import {CookieService} from 'ngx-cookie-service';
 import {LogoutComponent} from './logout/logout.component';
 import {AppService} from "./app.service";
+import {StoreModule} from '@ngrx/store';
+import {ChatroomModule} from "./chatroom/chatroom.module";
+import {chatroomReducer} from "./chatroom/state-chatroom/chatroom-page.reducer";
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import {ChatroomService} from "./chatroom/chatroom.service";
+import {headerReducer} from "./header/state-header/header-page.reducer";
+import {HeaderModule} from "./header/header.module";
+import {HomeComponent} from "./home/home.component";
+import {Subscription} from "rxjs";
 
 @NgModule({
   declarations: [
@@ -32,6 +41,7 @@ import {AppService} from "./app.service";
     HeaderComponent,
     ChatroomComponent,
     LogoutComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -50,8 +60,15 @@ import {AppService} from "./app.service";
     StyleClassModule,
     TableModule,
     ListboxModule,
+    StoreModule.forRoot({
+      chatroom: chatroomReducer,
+      header: headerReducer,
+    }),
+    ChatroomModule,
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+    HeaderModule,
   ],
-  providers: [CookieService, AppService],
+  providers: [CookieService, AppService, ChatroomService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
